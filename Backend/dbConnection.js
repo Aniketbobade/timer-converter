@@ -1,8 +1,8 @@
 const mongoose= require("mongoose");
-
+require('dotenv').config()
 
 exports.connect= async()=>{
-    mongoose.connect("mongodb+srv://bobadeaniket5:NGlcZgojU5T2N9VE@cluster0.drpjry4.mongodb.net/timer",{
+    mongoose.connect(process.env.MONGO_URI,{
         useNewUrlParser: true,
         useUnifiedTopology:true,
     }).then(()=>{
