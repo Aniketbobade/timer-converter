@@ -1,0 +1,20 @@
+<form (ngSubmit)="submitForm()" #myForm="ngForm">
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" [(ngModel)]="formData.date" required>
+    </div>
+    <div>
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" [(ngModel)]="formData.time" required>
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+    </div>
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+  </form>
+  
+  <div *ngFor="let item of resultList">
+    <p>Name: {{ item.Name }}</p>
+    <p>Enter Time: {{ item.EnterTime }}</p>
+  </div>
